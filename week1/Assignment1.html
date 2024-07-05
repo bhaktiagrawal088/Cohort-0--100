@@ -14,6 +14,7 @@
         <button style="color: brown; background-color : burlywood" id="countdown">30</button>
     </body>
     <script>
+        // *** Solution 1
         const countdownEl = document.getElementById('countdown')
         let count = 30
         const countdown = setInterval(() => {
@@ -25,6 +26,23 @@
             count--;
             }, 1000)
 
+            // *** Solution 2
+            const starttime = performance.now();
+            setTimeout(()=>{
+            const endtime = performance.now()
+            const res = endtime - starttime
+            console.log('The consume time is'+' ' + res)
+            console.log('this is callback function')
+            },1000)
 
+            // *** Solution 3
+            function clock (){
+                let time = new Date();
+                const currhour = time.getHours();
+                const currmin = time.getMinutes();
+                const currsec = time.getSeconds();
+            console.log(`${currhour} : ${currmin} : ${currsec}`)
+            }
+            setInterval(clock, 1000)
     </script>
     </html>
