@@ -1,0 +1,23 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <button style="color: brown; background-color : burlywood" id="countdown">30</button>
+    </body>
+    <script>
+        const countdownEl = document.getElementById('countdown')
+        let count = 30
+        const countdown = setInterval(() => {
+            countdownEl.innerHTML = count
+            if(count == 10)
+            {
+                clearInterval(countdown)
+            }
+            count--;
+            }, 1000)
+    </script>
+    </html>
